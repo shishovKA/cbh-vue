@@ -1,0 +1,22 @@
+{
+    "portfolios": [
+      { 
+        "name": "Critical Infrastructure",
+        "value_mn": 1250, 
+        "risk": 2.72, 
+        "dicount": -0.1,
+        "fair-value_mn": -125,
+        "loss-value": -0.23,
+        "loss-value-usd_mn": -291,
+      }
+    ],
+
+    "upload-history": [
+      { "name": "Portfolio-Database-Q2-2020", "date": "2012-04-23T18:25:43.511Z", "uploader-name": "John" },
+      { "name": "Portfolio-Database-Q1-2020", "date": "2012-04-23T18:25:43.511Z", "uploader-name": "John" },
+    ]
+   
+  }
+
+
+
