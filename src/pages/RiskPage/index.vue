@@ -23,6 +23,7 @@ export default class RiskPage extends Vue {
   justify-content: center;
   align-items: center;
   color: black;
+  flex-basis: 100%;
 }
 
 .page > * {

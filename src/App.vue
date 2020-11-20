@@ -10,14 +10,20 @@
     </div>
 
     <HeaderMenu v-show="this.$store.getters.hasMenuHeader"/>
-    <WelcomePage v-if='this.$store.state.currentPage === "Welcome"'/>
-    <RiskPage v-if='this.$store.state.currentPage === "Portfolio Risk"'/>
+
+    <div class="page__container">
+      <Sidebar v-show="this.$store.getters.hasSidebar"/>
+      <WelcomePage v-if='this.$store.state.currentPage === "Welcome"'/>
+      <RiskPage v-if='this.$store.state.currentPage === "Portfolio Risk"'/>
+    </div>
+    
   </div>
 </template>
 
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
 import HeaderMenu from "./components/HeaderMenu.vue";
+import Sidebar from "./components/Sidebar.vue";
 import WelcomePage from "./pages/WelcomePage/index.vue";
 import RiskPage from "./pages/RiskPage/index.vue";
 
@@ -81,6 +87,11 @@ html, body {
   color: #FFFFFF;
   text-transform: uppercase;
   margin: 0;
+}
+
+.page__container{
+  display: flex;
+  justify-content: stretch;
 }
 
 

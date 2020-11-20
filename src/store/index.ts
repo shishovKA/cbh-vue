@@ -7,12 +7,17 @@ export default new Vuex.Store({
   state: {
     currentPage: 'Welcome',
     headerMenuData: [
-      { title: "Portfolio Risk", selected: true, isPro: false },
+      { title: "Portfolio Risk", selected: false, isPro: false },
       { title: "Peer Benchmarking", selected: false, isPro: false },
       { title: "Stress test", selected: false, isPro: false },
       { title: "Research", selected: false, isPro: false },
       { title: "Scenario Planner", selected: false, isPro: true },
     ],
+
+    sidebarData: [
+      { name: "Portfolio Name", score: 4 },
+    ]
+
   },
 
   getters: {
@@ -20,14 +25,18 @@ export default new Vuex.Store({
       if (state.currentPage === 'Welcome') return false;
       return true;
     },
+
+    hasSidebar: state => {
+      if (state.currentPage === 'Welcome') return false;
+      return true;
+    },
   },
+  
 
   mutations: {
-    switchPage(state, payload) {
+    
+    SWITCH_PAGE(state, payload) {
       state.currentPage = payload;
-    },
-
-    toggleMenu(state) {
       state.headerMenuData.forEach((element) => {
         if (element.title == state.currentPage) {
           element.selected = true;
@@ -36,7 +45,8 @@ export default new Vuex.Store({
           element.selected = false;
         }
       });
-    }
+    },
+
 
   },
 

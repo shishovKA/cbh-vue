@@ -12,7 +12,7 @@ import { Component, Prop, Vue } from "vue-property-decorator";
 @Component
 export default class WelcomePage extends Vue {
   changePage() {
-    this.$store.commit("switchPage", "Portfolio Risk");
+    this.$store.commit("SWITCH_PAGE", "Portfolio Risk");
   }
 }
 </script>
@@ -26,6 +26,7 @@ export default class WelcomePage extends Vue {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  flex-basis: 100%;
 }
 
 .page > * {

@@ -11,8 +11,7 @@ export default class HeaderMenuItem extends Vue {
   @Prop() private selected!: string;
 
   changePage() {
-    this.$store.commit("switchPage", this.title);
-    this.$store.commit("toggleMenu");
+    this.$store.commit("SWITCH_PAGE", this.title);
   }
 }
 </script>
