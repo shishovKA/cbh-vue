@@ -25,7 +25,8 @@ export default class HeaderMenu extends Vue {
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped lang="scss">
+
+<style lang="scss">
 
 .container {
   box-sizing: border-box;
@@ -38,7 +39,7 @@ export default class HeaderMenu extends Vue {
 }
 
 .container_navbar {
-  background-color: #202a33;
+  background-color: #202A33;
   justify-content: start;
   height: 52px;
 }

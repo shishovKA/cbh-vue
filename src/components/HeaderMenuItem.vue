@@ -16,7 +16,8 @@ export default class HeaderMenuItem extends Vue {
 }
 </script>
 
-<style>
+<style scoped lang="css">
+
 .navbtn {
   padding: 0px 10px;
   color: white;
@@ -26,6 +27,7 @@ export default class HeaderMenuItem extends Vue {
 }
 
 .selected {
-  background-color: rgba(255, 255, 255, 0.3);
+  background-color: #343E47;
 }
+
 </style>

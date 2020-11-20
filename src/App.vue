@@ -30,8 +30,10 @@ import RiskPage from "./pages/RiskPage/index.vue";
 @Component({
   components: {
     HeaderMenu,
+    Sidebar,
     WelcomePage,
     RiskPage,
+
   },
 })
 

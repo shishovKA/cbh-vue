@@ -14,8 +14,12 @@ export default new Vuex.Store({
       { title: "Scenario Planner", selected: false, isPro: true },
     ],
 
+    currentPortfolioId: '',
+
     sidebarData: [
-      { name: "Portfolio Name", score: 4 },
+      { name: "Portfolio Name", score: 4, selected: true },
+      { name: "Portfolio Name", score: 4, selected: false },
+      { name: "Portfolio Name", score: 4, selected: false },
     ]
 
   },
@@ -34,17 +38,24 @@ export default new Vuex.Store({
   
 
   mutations: {
-    
+
     SWITCH_PAGE(state, payload) {
       state.currentPage = payload;
       state.headerMenuData.forEach((element) => {
-        if (element.title == state.currentPage) {
+        if (element.title === state.currentPage) {
           element.selected = true;
         }
         else {
           element.selected = false;
         }
       });
+    },
+
+    SWITCH_PORTFOLIO(state, payload) {
+      state.sidebarData.forEach((element) => {
+          element.selected = false;
+      });
+      state.sidebarData[payload].selected = true;
     },
 
 
