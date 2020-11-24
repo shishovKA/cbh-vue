@@ -4,23 +4,24 @@
     <div class="sidebar__menu-container">
     
       <SidebarItem
-        v-for="(sidebarItem, index) in this.$store.state.sidebarData"
+        v-for="(sidebarItem, index) in this.$store.state.SideBar.data"
         v-bind:name="sidebarItem.name"
         v-bind:selected="sidebarItem.selected"
         v-bind:score="sidebarItem.score"
+        v-bind:id="sidebarItem.id"
         v-bind:index="index"
         v-bind:key="index"
       >
       </SidebarItem>
-    
+
     </div>
   </div>
 </template>
 
 <script lang="ts">
 
-import { Component, Prop, Vue } from "vue-property-decorator";
-import SidebarItem from "./SidebarItem.vue";
+import { Component, Prop, Vue } from 'vue-property-decorator';
+import SidebarItem from './SidebarItem.vue';
 
 @Component({
   components: {
@@ -29,6 +30,7 @@ import SidebarItem from "./SidebarItem.vue";
 })
 
 export default class Sidebar extends Vue {}
+
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->

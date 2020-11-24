@@ -1,9 +1,10 @@
 <template>
   <div class="container container_navbar">
     <HeaderMenuItem
-      v-for="(menuItem, index) in this.$store.state.headerMenuData"
+      v-for="(menuItem, index) in this.$store.state.Header.data"
       v-bind:title="menuItem.title"
       v-bind:selected="menuItem.selected"
+      v-bind:index="index"
       v-bind:key="index"
     >
     </HeaderMenuItem>
@@ -11,12 +12,12 @@
 </template>
 
 <script lang="ts">
-import { Component, Prop, Vue } from "vue-property-decorator";
-import HeaderMenuItem from "./HeaderMenuItem.vue"
+import { Component, Prop, Vue } from 'vue-property-decorator';
+import HeaderMenuItem from './HeaderMenuItem.vue';
 
 @Component({
   components: {
-    HeaderMenuItem
+    HeaderMenuItem,
   },
 })
 

@@ -3,15 +3,16 @@
 </template>
 
 <script lang="ts">
-import { Component, Prop, Vue } from "vue-property-decorator";
+import { Component, Prop, Vue } from 'vue-property-decorator';
 
 @Component
 export default class HeaderMenuItem extends Vue {
   @Prop() private title!: string;
   @Prop() private selected!: string;
+  @Prop() private index!: number;
 
-  changePage() {
-    this.$store.commit("SWITCH_PAGE", this.title);
+  private changePage() {
+    this.$store.commit('selectHeaderItem', this.index);
   }
 }
 </script>

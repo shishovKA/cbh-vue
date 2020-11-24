@@ -1,0 +1,55 @@
+<template>
+  <div>
+    <HeaderMenu />
+    <div class="page__container">
+      <Sidebar />
+      <div class="page">
+        <h1>Loss Model</h1>
+      </div>
+    </div>
+  </div>
+</template>
+
+<script lang="ts">
+
+import { Component, Prop, Vue } from 'vue-property-decorator';
+import Sidebar from '../../components/Sidebar.vue';
+import HeaderMenu from '../../components/HeaderMenu.vue';
+
+@Component({
+  components: {
+    Sidebar,
+    HeaderMenu,
+  },
+})
+export default class LossPage extends Vue {}
+</script>
+
+<!-- Add "scoped" attribute to limit CSS to this component only -->
+<style scoped lang="scss">
+.page__container {
+  display: flex;
+  justify-content: stretch;
+}
+
+.page {
+  background-color: #ffffff;
+  min-height: calc(100vh - 100px - 52px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: black;
+  flex-basis: 100%;
+}
+
+.page > * {
+  text-align: center;
+  margin: 0;
+  margin-bottom: 20px;
+}
+
+.button {
+  color: black;
+}
+</style>

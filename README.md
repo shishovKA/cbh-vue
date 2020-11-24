@@ -22,3 +22,6 @@ npm run lint
 
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
+
+### Deploy
+git push -f git@github.com:shishovka/cbh-vue.git master:gh-pages

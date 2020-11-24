@@ -9,42 +9,59 @@
       <p>Powered by CYBERHEDGE</p>
     </div>
 
-    <HeaderMenu v-show="this.$store.getters.hasMenuHeader"/>
+    <component v-bind:is="currentPage"></component>
 
-    <div class="page__container">
-      <Sidebar v-show="this.$store.getters.hasSidebar"/>
-      <WelcomePage v-if='this.$store.state.currentPage === "Welcome"'/>
-      <RiskPage v-if='this.$store.state.currentPage === "Portfolio Risk"'/>
-    </div>
-    
   </div>
 </template>
 
 <script lang="ts">
-import { Component, Vue } from "vue-property-decorator";
-import HeaderMenu from "./components/HeaderMenu.vue";
-import Sidebar from "./components/Sidebar.vue";
-import WelcomePage from "./pages/WelcomePage/index.vue";
-import RiskPage from "./pages/RiskPage/index.vue";
+import { Component, Vue } from 'vue-property-decorator';
+
+// Pages
+import WelcomePage from './pages/WelcomePage/index.vue';
+import RiskPage from './pages/RiskPage/index.vue';
+import BenchmarkPage from './pages/BenchmarkPage/index.vue';
+import LossPage from './pages/LossPage/index.vue';
+import ResearchPage from './pages/ResearchPage/index.vue';
+import ScenarioPage from './pages/ScenarioPage/index.vue';
+
+// JSON
+import dashboardDb from '../dashboardDb.json';
+
+//CSV
+import dashboardCSV from './csv-for-test/dashboard_main.csv';
+
+// Store
+import store  from './store/index'
 
 @Component({
   components: {
-    HeaderMenu,
-    Sidebar,
     WelcomePage,
     RiskPage,
-
+    BenchmarkPage,
+    LossPage,
+    ResearchPage,
+    ScenarioPage,
   },
 })
+export default class App extends Vue {
+  
+  private mounted() {
+    store.commit('loadJSON', dashboardDb);
+    store.commit('loadCSV', dashboardCSV);
+  }
 
-export default class App extends Vue {}
+  get currentPage() {
+    return store.getters.currentPage;
+  }
+}
 </script>
 
 <style lang="scss">
-
 $header-height: 100px;
 
-html, body {
+html,
+body {
   margin: 0px;
   height: 100%;
 }
@@ -86,14 +103,9 @@ html, body {
   font-size: 45px;
   line-height: 50px;
   letter-spacing: -0.02em;
-  color: #FFFFFF;
+  color: #ffffff;
   text-transform: uppercase;
   margin: 0;
-}
-
-.page__container{
-  display: flex;
-  justify-content: stretch;
 }
 
 

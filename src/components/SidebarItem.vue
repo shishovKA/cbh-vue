@@ -1,23 +1,24 @@
 <template>
   <div @click="selectPortfolio" class="item" v-bind:class="{ selected: selected }">
-      <p class="item__text">Portfolio {{index}} </p>
+      <p class="item__text">Portfolio {{index+1}} </p>
       <strong> {{name}} </strong>
       <p class="item__text">{{score}}</p>
   </div>
 </template>
 
 <script lang="ts">
-import { Component, Prop, Vue } from "vue-property-decorator";
+import { Component, Prop, Vue } from 'vue-property-decorator';
 
 @Component
 export default class SidebarItem extends Vue {
-  @Prop()  name!: string;
-  @Prop()  score!: number;
-  @Prop()  index!: number;
-  @Prop()  selected!: boolean;
+  @Prop()  private name!: string;
+  @Prop()  private score!: number;
+  @Prop()  private index!: number;
+  @Prop()  private selected!: boolean;
+  @Prop()  private id!: string;
 
-  selectPortfolio() {
-    this.$store.commit("SWITCH_PORTFOLIO", this.index);
+  private selectPortfolio() {
+    this.$store.commit('switchPortfolio', this.id);
   }
 }
 

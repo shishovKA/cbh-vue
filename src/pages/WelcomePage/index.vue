@@ -7,12 +7,13 @@
 </template>
 
 <script lang="ts">
-import { Component, Prop, Vue } from "vue-property-decorator";
+import { Component, Prop, Vue } from 'vue-property-decorator';
 
 @Component
 export default class WelcomePage extends Vue {
-  changePage() {
-    this.$store.commit("SWITCH_PAGE", "Portfolio Risk");
+
+  private changePage() {
+    this.$store.commit('switchPage', 'RiskPage');
   }
 }
 </script>
