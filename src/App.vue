@@ -29,7 +29,8 @@ import ScenarioPage from './pages/ScenarioPage/index.vue';
 import dashboardDb from '../dashboardDb.json';
 
 //CSV
-import dashboardCSV from './csv-for-test/dashboard_main.csv';
+//@ts-ignore
+import dashboardCSV from './csv-for-test/randomCos.csv';
 
 // Store
 import store  from './store/index'

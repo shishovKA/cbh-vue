@@ -2,9 +2,9 @@
   <div>
     <HeaderMenu />
     <div class="page__container">
-      <Sidebar />
       <div class="page">
-        <h1>Scenario Planner</h1>
+        <h1>Get in-depth report for each portfolio company</h1>
+        <button>Unlock Scenario Planner</button>
       </div>
     </div>
   </div>
@@ -13,12 +13,11 @@
 <script lang="ts">
 
 import { Component, Prop, Vue } from 'vue-property-decorator';
-import Sidebar from '../../components/Sidebar.vue';
+
 import HeaderMenu from '../../components/HeaderMenu.vue';
 
 @Component({
   components: {
-    Sidebar,
     HeaderMenu,
   },
 })

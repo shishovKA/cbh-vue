@@ -5,6 +5,7 @@ import SideBar from './modules/sidebar'
 import Header from './modules/header'
 
 import RiskPageModule from './modules/risk-page'
+import BenchmarkingModule from './modules/benchmarking'
 
 Vue.use(Vuex);
 
@@ -17,5 +18,6 @@ export default new Vuex.Store({
     Header,
 
     RiskPageModule,
+    BenchmarkingModule,
   },
 });

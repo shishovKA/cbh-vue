@@ -1,0 +1,22 @@
+companyID,companyName,companyMarketCap,cyberGovScore,complexity,awareness,vulnerability,capitamManagement,capitalEfficiency,financialExposure,productivity,sentiment,ransomware_less_low,ransomware_less_low.1,ransomware_more_low,ransomware_more_low.1,portID
+co_ 1,Coastway Bancorp Inc,572.499840112257,2,5,4,5,5,4,2,5,3,5,12,36,20,port_1
+co_ 2,CF Industries Holdings Inc,1180.76174143226,4,3,3,5,2,5,5,4,1,8,6,23,26,port_1
+co_ 3,NetSuite Inc,355.924380011857,4,1,4,1,3,3,3,3,3,10,10,35,30,port_1
+co_ 4,AsiaInfo-Linkage Inc,258.7995599024,5,3,2,4,2,5,3,1,3,12,9,38,38,port_1
+co_ 5,Bellway PLC,530.980271752924,1,1,3,4,2,4,4,4,4,11,11,39,30,port_1
+co_ 6,Caesars Entertainment Corp,265.260710381125,2,2,4,5,5,3,3,1,1,5,8,19,33,port_1
+co_ 7,Elah Holdings Inc,424.318819306791,3,2,3,1,5,3,2,1,1,5,10,35,19,port_1
+co_ 8,Equity Residential,508.007374126464,3,4,3,3,2,1,2,1,3,8,5,37,33,port_1
+co_ 9,Mosaic Co/The,145.110565367683,1,2,1,5,1,5,3,5,2,5,8,31,26,port_1
+co_ 10,Global Blood Therapeutics Inc,4250.91346365543,2,1,5,4,5,1,5,3,4,6,5,17,21,port_1
+co_ 1,Walliser Kantonalbank,600.880866404623,5,2,5,3,2,1,5,1,3,10,11,22,18,port_2
+co_ 2,First Defiance Financial Corp,508.714695926756,4,3,5,1,2,1,2,3,5,6,7,26,40,port_2
+co_ 3,Blount International Inc,685.855272226036,4,5,2,3,4,3,3,2,3,6,8,19,38,port_2
+co_ 4,SEI Investments Co,264.042431954294,2,3,1,5,5,4,2,4,2,10,8,20,26,port_2
+co_ 1,Tricon Capital Group Inc,64.5355148713768,4,2,5,1,2,4,1,2,1,9,7,30,37,port_3
+co_ 2,American Oriental Bioengineering Inc,291.394429747015,4,1,5,4,1,3,5,3,1,7,11,17,40,port_3
+co_ 3,Deutsche Pfandbriefbank AG,133.871010039002,1,2,1,3,5,1,5,2,4,11,12,34,33,port_3
+co_ 4,Animal Health Holdings Inc,1193.69359496505,2,3,4,2,5,5,5,3,4,12,10,17,33,port_3
+co_ 5,Change Healthcare Inc,40.2913222550142,2,2,4,3,3,5,4,3,4,6,12,28,37,port_3
+co_ 6,Smith International Inc,2396.87009582641,3,5,3,5,1,5,4,4,2,8,5,39,28,port_3
+co_ 7,Geron Corp,100.406411569566,2,2,5,1,5,1,1,5,2,10,8,26,35,port_3

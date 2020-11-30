@@ -2,7 +2,6 @@
   <div>
     <HeaderMenu />
     <div class="page__container">
-      <Sidebar />
       <div class="page">
         <h1>Research</h1>
       </div>
@@ -13,12 +12,10 @@
 <script lang="ts">
 
 import { Component, Prop, Vue } from 'vue-property-decorator';
-import Sidebar from '../../components/Sidebar.vue';
 import HeaderMenu from '../../components/HeaderMenu.vue';
 
 @Component({
   components: {
-    Sidebar,
     HeaderMenu,
   },
 })

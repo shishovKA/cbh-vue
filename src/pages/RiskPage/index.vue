@@ -20,10 +20,10 @@
 
           <div>
             <h2>Cyber based Discount to Fair Value</h2>
-            <p>
+            <p style="background-color: red">
               {{ this.$store.getters["RiskPageModule/discount"] }}%
-              {{ this.$store.getters["RiskPageModule/fairValue"] }}
             </p>
+            <strong>{{ this.$store.getters["RiskPageModule/fairValue"] }}</strong>
           </div>
         </div>
 

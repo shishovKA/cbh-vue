@@ -44,6 +44,7 @@ class Root extends VuexModule {
 
   get curPortfolioJSON() {
     const portfolioId = store.state.Root.curPorfolioId;
+    //@ts-ignore
     const portfolio = store.state.Root.baseJsonObj.portfolios.find(portfolio => portfolio.id === portfolioId);
     return portfolio
   }

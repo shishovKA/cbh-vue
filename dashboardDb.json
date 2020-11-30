@@ -1,7 +1,7 @@
 {
     "portfolios": [
       { 
-        "id": "unique-id-p1",
+        "id": "port_1",
         "name": "Critical Infrastructure",
         "value_mn": 1250, 
         "risk": 2.72, 
@@ -12,7 +12,7 @@
       },
 
       { 
-        "id": "unique-id-p2",
+        "id": "port_2",
         "name": "Renewable Energy",
         "value_mn": 1560, 
         "risk": 5, 
@@ -20,6 +20,17 @@
         "fair-value_mn": -125,
         "loss-value": -0.23,
         "loss-value-usd_mn": -291
+      },
+
+      { 
+        "id": "port_3",
+        "name": "Healthcare",
+        "value_mn": 750, 
+        "risk": 3.50, 
+        "discount": -0.4,
+        "fair-value_mn": -146,
+        "loss-value": -0.45,
+        "loss-value-usd_mn": -409
       }
 
     ],

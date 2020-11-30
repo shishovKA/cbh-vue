@@ -5,7 +5,7 @@ import { VuexModule, Module, Mutation, Action } from 'vuex-module-decorators'
 @Module({ namespaced: true, name: 'rpm' })
 class RiskPageModule extends VuexModule {
 
-public headers = ['company-name','portfolio-weight (%)','cyber-governance-score','discount-to-fair-value (%)', 'fair-value (mn)'];
+public headers = ['PORTFOLIO COMPANIES','PORTFOLIO WEIGHT','CYBER GOVERNANCE SCORE','DISCOUNT TO FAIR VALUE', 'FAIR VALUE'];
 
 get value() {
     const portfolio = store.getters.curPortfolioJSON;
@@ -33,12 +33,14 @@ get fairValue() {
 
 get tableArr() {
     const portfolioID = store.state.Root.curPorfolioId;
-    const headers = ['company-name','portfolio-weight (%)','cyber-governance-score','discount-to-fair-value (%)', 'fair-value (mn)'] 
-    const table = store.state.Root.csvDB.filter(company => company['portfolio-id'] === portfolioID);
+    const headers = ['companyName','weight','cyberGovScore','discount-to-fair-value (%)', 'fair-value (mn)'] 
+    //@ts-ignore
+    const table = store.state.Root.csvDB.filter(company => company['portID'] === portfolioID);
+    //@ts-ignore
     const resultArr = table.map((company) => {
-        const item = [];
+        const item: any = [];
         headers.forEach((header) => {
-            item.push(company[header])
+            if (header in company) { item.push(company[header]) } else { item.push('❔') }
         });
         return item;
     });

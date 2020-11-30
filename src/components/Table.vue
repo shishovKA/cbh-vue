@@ -51,4 +51,8 @@ export default class Table extends Vue {
    width: 100%;
  }
 
+ td {
+   text-align: center;
+ }
+
 </style>
