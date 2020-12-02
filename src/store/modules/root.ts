@@ -7,6 +7,7 @@ class Root extends VuexModule {
 
   public baseJsonObj: any;
   private csvDB: any;
+  private sqrCSV: any;
 
   public curPageInd: number = 0;
   public pages: string[] = ['WelcomePage', 'RiskPage', 'BenchmarkPage', 'LossPage', 'ResearchPage', 'ScenarioPage'];
@@ -22,6 +23,11 @@ class Root extends VuexModule {
   @Mutation
   loadCSV(newCSV: any) {
     this.csvDB = newCSV;
+  }
+
+  @Mutation
+  loadSqrCSV(newCSV: any) {
+    this.sqrCSV = newCSV;
   }
 
 
@@ -41,6 +47,8 @@ class Root extends VuexModule {
   get currentPage() {
     return this.pages[this.curPageInd];
   }
+
+
 
   get curPortfolioJSON() {
     const portfolioId = store.state.Root.curPorfolioId;

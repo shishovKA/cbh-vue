@@ -18,39 +18,11 @@
           </div>
         </div>
 
-        <div class="table">
-          <Table
-            v-if="
-              this.$store.getters['BenchmarkingModule/selectedTab'].hasTable
-            "
-            v-bind:headers="
-              this.$store.getters['BenchmarkingModule/selectedTab'].tableHeaders
-            "
-            v-bind:tableArr="
-              this.$store.getters[
-                `BenchmarkingModule/${this.$store.getters['BenchmarkingModule/selectedTab'].tableName}`
-              ]
-            "
-          >
-          </Table>
+        <div class="table" v-if="this.$store.getters['BenchmarkingModule/selectedTab'].hasTable">
+          <component v-bind:is="this.$store.getters['BenchmarkingModule/selectedTab'].tableName"></component>
         </div>
 
-        <div v-if="
-              this.$store.getters['BenchmarkingModule/selectedTab'].hasSqrChart
-            ">
-          <section class="section section_chart">
-            <div class="chart__container chart__container_half">
-              <p class="chart__title">div - to insert your Chart:</p>
-              <div id="indexChart_3" class="chart"></div>
-            </div>
-          </section>
-
-          <section class="section section_panel">
-            <div class="panel">
-              <button id="rand_btn">Randomize series</button>
-            </div>
-          </section>
-        </div>
+        <ChartSqr v-if="this.$store.getters['BenchmarkingModule/selectedTab'].hasSqrChart"/>
 
       </div>
     </div>
@@ -58,30 +30,35 @@
 </template>
 
 <script lang="ts">
+
 import { Component, Prop, Vue } from "vue-property-decorator";
 import Sidebar from "../../components/Sidebar.vue";
 import HeaderMenu from "../../components/HeaderMenu.vue";
-import Table from "../../components/Table.vue";
+
+// tables
+import EquityTable from "./tabels/EquityTable.vue";
+import CreditTable from "./tabels/CreditTable.vue";
+import PerformanceTable from "./tabels/PerformanceTable.vue";
+
+// charts
+import ChartSqr from "./charts/ChartSqr.vue";
 
 
 @Component({
   components: {
     Sidebar,
     HeaderMenu,
-    Table,
+    EquityTable,
+    CreditTable,
+    PerformanceTable,
+
+    ChartSqr,
   },
 })
 export default class BenchmarkPage extends Vue {
+  
   private changeTab(index: number) {
     this.$store.commit("BenchmarkingModule/selectHeaderItem", index);
-  }
-
-  mounted() {
-    //Vue.loadScript("/js/jquery-2.2.4.min.js")
-    //this.$loadScript("https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY")
-    //.then(() => {
-      // Script is loaded, do something
-    //})
   }
 
 }
@@ -89,6 +66,7 @@ export default class BenchmarkPage extends Vue {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
+
 .page__container {
   display: flex;
   justify-content: stretch;
@@ -99,6 +77,9 @@ export default class BenchmarkPage extends Vue {
   min-height: calc(100vh - 100px - 52px);
   color: black;
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  
 }
 
 td {
@@ -123,9 +104,8 @@ td {
 
 .table {
   margin-top: 50px;
+  height: 100%;
 }
 
-.button {
-  color: black;
-}
+
 </style>

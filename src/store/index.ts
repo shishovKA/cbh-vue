@@ -6,6 +6,7 @@ import Header from './modules/header'
 
 import RiskPageModule from './modules/risk-page'
 import BenchmarkingModule from './modules/benchmarking'
+import LossModule from './modules/lossmodel'
 
 Vue.use(Vuex);
 
@@ -19,5 +20,6 @@ export default new Vuex.Store({
 
     RiskPageModule,
     BenchmarkingModule,
+    LossModule,
   },
 });

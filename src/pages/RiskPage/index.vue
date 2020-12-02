@@ -6,7 +6,7 @@
       
       <div v-if="this.$store.getters.curPortfolioJSON" class="page">
         <div>
-          <h1>Portfolio Risk Critical Infrastructure</h1>
+          <h1>Portfolio Risk <span class="notbold">{{this.$store.getters.curPortfolioJSON.name}}</span></h1>
           <p>
             Potfolio Value {{ this.$store.getters["RiskPageModule/value"] }}
           </p>
@@ -79,6 +79,10 @@ export default class RiskPage extends Vue {}
   margin: 0;
   margin-bottom: 20px;
 }
+
+.notbold {
+   font-weight: normal;
+}​
 
 .value-container {
   display: flex;

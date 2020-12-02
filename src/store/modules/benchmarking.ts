@@ -11,8 +11,7 @@ class BenchmarkingModule extends VuexModule {
             selected: true,
             isPro: false,
             hasTable: true,
-            tableName: 'tableEquity',
-            tableHeaders: ['Cyber Risk Related Impact on Market Value', 'DISCOUNT TO FAIR VALUE', 'FAIR VALUE']
+            tableName: 'EquityTable',
         },
 
         {
@@ -20,8 +19,7 @@ class BenchmarkingModule extends VuexModule {
             selected: false,
             isPro: false,
             hasTable: true,
-            tableName: 'tableCredit',
-            tableHeaders: ['Cyber Risk Related Impact on Credit Downgrade ', 'Probability of Downgrade']
+            tableName: 'CreditTable',
         },
 
         {
@@ -29,8 +27,7 @@ class BenchmarkingModule extends VuexModule {
             selected: false,
             isPro: false,
             hasTable: true,
-            tableName: 'tablePerformance',
-            tableHeaders: ['Cyber Risk Related Impact on Performace', 'Operating Income', 'Revenue', 'Free Cash Flow', 'Net Income', 'Quick Ratio', 'Working Capital Ratio', 'Book Value']
+            tableName: 'PerformanceTable',
         },
 
         {

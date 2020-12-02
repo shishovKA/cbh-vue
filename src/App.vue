@@ -31,6 +31,8 @@ import dashboardDb from '../dashboardDb.json';
 //CSV
 //@ts-ignore
 import dashboardCSV from './csv-for-test/randomCos.csv';
+//@ts-ignore
+import sqrCSV from './csv-for-test/cbhVulnerability_test.csv';
 
 // Store
 import store  from './store/index'
@@ -50,6 +52,7 @@ export default class App extends Vue {
   private mounted() {
     store.commit('loadJSON', dashboardDb);
     store.commit('loadCSV', dashboardCSV);
+    store.commit('loadSqrCSV', sqrCSV);
   }
 
   get currentPage() {

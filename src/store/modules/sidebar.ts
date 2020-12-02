@@ -13,6 +13,7 @@ class SideBar extends VuexModule {
 
     public data: sidebarItem[] = [];
 
+
     @Mutation
     switchPortfolio(id: string) {
         this.data.forEach((element) => {
@@ -28,14 +29,21 @@ class SideBar extends VuexModule {
     @Mutation
     loadSidebarData(portfolios: any) {
         this.data.splice(0, this.data.length);
-        portfolios.forEach((portfolio: any) => {
+        portfolios.forEach((portfolio: any, ind:number) => {
             const el = {
                 name: portfolio.name,
                 id: portfolio.id,
                 score: portfolio.risk,
                 selected: false,
             };
+            if (ind == 0) {
+                el.selected = true
+            };
             this.data.push(el);
+            if (ind == 0) {
+                store.commit('changeCurrentPortfolioId', el.id);
+            };
+            
         });
     };
 
