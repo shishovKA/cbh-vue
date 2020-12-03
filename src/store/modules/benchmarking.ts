@@ -40,6 +40,67 @@ class BenchmarkingModule extends VuexModule {
 
     ];
 
+
+    public cyberFactors = [
+        {
+            title: 'Complexitty',
+            selected: true,
+            dbKey: 'complexity',
+        },
+
+        {
+            title: 'Awareness',
+            selected: false,
+            dbKey: 'awareness',
+        },
+
+        {
+            title: 'Vulnerability',
+            selected: false,
+            dbKey: 'vulnerability',
+        },
+
+    ];
+
+    public financialFactors = [
+        {
+            title: 'Capital Efficiency ',
+            selected: true,
+            dbKey: 'capitalEfficiency',
+        },
+
+        {
+            title: 'Capital Management',
+            selected: false,
+            dbKey: 'capitamManagement',
+        },
+
+        {
+            title: 'Complience',
+            selected: false,
+            dbKey: '',
+        },
+
+        {
+            title: 'Financial Exposure',
+            selected: false,
+            dbKey: 'financialExposure',
+        },
+
+        {
+            title: 'Productivity',
+            selected: false,
+            dbKey: 'productivity',
+        },
+
+        {
+            title: 'Sentiment',
+            selected: false,
+            dbKey: 'sentiment',
+        },
+
+    ];
+
     @Mutation
     selectHeaderItem(index: number) {
         this.data.forEach((element) => {
@@ -49,6 +110,34 @@ class BenchmarkingModule extends VuexModule {
         const selectedItem = this.data[index];
         selectedItem.selected = true;
     };
+
+    @Mutation
+    selectCyberFactor(index: number) {
+        this.cyberFactors.forEach((element) => {
+            element.selected = false;
+        });
+
+        const selectedItem = this.cyberFactors[index];
+        selectedItem.selected = true;
+    };
+
+    @Mutation
+    selectFinancialFactor(index: number) {
+        this.financialFactors.forEach((element) => {
+            element.selected = false;
+        });
+
+        const selectedItem = this.financialFactors[index];
+        selectedItem.selected = true;
+    };
+
+    get selectedCyberFactor() {
+        return this.cyberFactors.find(item => item.selected == true);
+    }
+
+    get selectedFinancialFactor() {
+        return this.financialFactors.find(item => item.selected == true);
+    }
 
     get selectedTab() {
         return this.data.find(item => item.selected == true);
