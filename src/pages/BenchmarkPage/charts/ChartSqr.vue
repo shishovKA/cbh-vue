@@ -36,29 +36,49 @@
 </template>
 
 <script lang="ts">
-import { Component, Prop, Vue } from "vue-property-decorator";
-import { createChart, chart, reorganizeChart} from "sqr-lib-1";
+import { Component, Prop, Vue, Watch } from "vue-property-decorator";
+import { createChart, chart, reorganizeChart } from "sqr-lib-1";
 
 @Component
 export default class ChartSqr extends Vue {
-  
   private getcsvCol(csv: any, field: string) {
     // @ts-ignore
     const col = csv.map((item) => item[field]);
     return col;
   }
 
+  @Watch("pId")
+  curPorfolioChanged(newVal: string) {
+    this.updateChart();
+  }
+
+  get pId() {
+    return this.$store.state.Root.curPorfolioId;
+  }
+
   mounted() {
     const chartContainer = document.getElementById("indexChart_3");
     createChart(chartContainer, [this.x, this.y, this.labels]);
-    chart.xAxis.setName(this.$store.getters["BenchmarkingModule/selectedFinancialFactor"].title,'start');
-    chart.yAxis.setName(this.$store.getters["BenchmarkingModule/selectedCyberFactor"].title,'start');
+    chart.xAxis.setName(
+      this.$store.getters["BenchmarkingModule/selectedFinancialFactor"].title,
+      "start"
+    );
+    chart.yAxis.setName(
+      this.$store.getters["BenchmarkingModule/selectedCyberFactor"].title,
+      "start"
+    );
   }
 
   private updateChart() {
     reorganizeChart(this.x, this.y, this.labels);
-    chart.xAxis.setName(this.$store.getters["BenchmarkingModule/selectedFinancialFactor"].title,'start');
-    chart.yAxis.setName(this.$store.getters["BenchmarkingModule/selectedCyberFactor"].title,'start');
+    chart.xAxis.setName(
+      this.$store.getters["BenchmarkingModule/selectedFinancialFactor"].title,
+      "start"
+    );
+    chart.yAxis.setName(
+      this.$store.getters["BenchmarkingModule/selectedCyberFactor"].title,
+      "start"
+    );
   }
 
   private changeCyberFactor(index: number) {
@@ -73,28 +93,41 @@ export default class ChartSqr extends Vue {
 
   get x() {
     const portfolioID = this.$store.state.Root.curPorfolioId;
+    
+    const table = this.$store.state.Root.csvDB.filter(
     // @ts-ignore
-    const table = this.$store.state.Root.csvDB.filter(company => company['portID'] === portfolioID);
-    const col = this.getcsvCol(table, this.$store.getters["BenchmarkingModule/selectedFinancialFactor"].dbKey);
+      (company) => company["portID"] === portfolioID
+    );
+    const col = this.getcsvCol(
+      table,
+      this.$store.getters["BenchmarkingModule/selectedFinancialFactor"].dbKey
+    );
     return col;
   }
 
   get y() {
     const portfolioID = this.$store.state.Root.curPorfolioId;
+    
+    const table = this.$store.state.Root.csvDB.filter(
     // @ts-ignore
-    const table = this.$store.state.Root.csvDB.filter(company => company['portID'] === portfolioID);
-    const col = this.getcsvCol(table, this.$store.getters["BenchmarkingModule/selectedCyberFactor"].dbKey);
+      (company) => company["portID"] === portfolioID
+    );
+    const col = this.getcsvCol(
+      table,
+      this.$store.getters["BenchmarkingModule/selectedCyberFactor"].dbKey
+    );
     return col;
   }
 
   get labels() {
     const portfolioID = this.$store.state.Root.curPorfolioId;
     // @ts-ignore
-    const table = this.$store.state.Root.csvDB.filter(company => company['portID'] === portfolioID);
-    const col = this.getcsvCol(table, 'companyID');
+    const table = this.$store.state.Root.csvDB.filter(
+      (company) => company["portID"] === portfolioID
+    );
+    const col = this.getcsvCol(table, "companyID");
     return col;
   }
-
 }
 </script>
 
