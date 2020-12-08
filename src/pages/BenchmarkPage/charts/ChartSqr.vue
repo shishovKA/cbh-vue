@@ -121,8 +121,9 @@ export default class ChartSqr extends Vue {
 
   get labels() {
     const portfolioID = this.$store.state.Root.curPorfolioId;
-    // @ts-ignore
+    
     const table = this.$store.state.Root.csvDB.filter(
+      // @ts-ignore
       (company) => company["portID"] === portfolioID
     );
     const col = this.getcsvCol(table, "companyID");

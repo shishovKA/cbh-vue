@@ -4,7 +4,11 @@
     <div class="page__container">
       <Sidebar />
       <div class="page">
-        <h1>Peer Benchmarking</h1>
+
+        <div class="title__container">
+          <h1 class="title">Peer Benchmarking <span class="title title_notbold">{{this.$store.getters.curPortfolioJSON.name}}</span></h1>
+        </div>
+
         <div class="header__container">
           <div
             class="header__item"
@@ -18,7 +22,7 @@
           </div>
         </div>
 
-        <div class="table" v-if="this.$store.getters['BenchmarkingModule/selectedTab'].hasTable">
+        <div class="table__container table__container_benchmark" v-if="this.$store.getters['BenchmarkingModule/selectedTab'].hasTable">
           <component v-bind:is="this.$store.getters['BenchmarkingModule/selectedTab'].tableName"></component>
         </div>
 
@@ -89,22 +93,39 @@ td {
 .header__container {
   box-sizing: border-box;
   width: 100%;
+  max-width: 693px;
   display: flex;
-  justify-content: space-around;
-  border-top: 2px solid rgb(180, 180, 180);
+  justify-content: space-between;
+  padding-left: 85px;
 }
 
 .header__item {
+  padding-top: 28px;
+  font-family: Inter;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 19px;
+
+  color: #16223F;
+
+  opacity: 0.7;
   cursor: pointer;
 }
 
 .selected {
   border-top: 2px solid black;
+  font-family: Inter;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 19px;
+  opacity: 1;
+  color: #2D2D2D;
 }
 
-.table {
+.table__container_benchmark {
   margin-top: 50px;
-  height: 100%;
 }
 
 

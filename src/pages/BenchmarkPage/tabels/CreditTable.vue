@@ -1,21 +1,20 @@
 <template>
  
-    <table>
-      <tr>
+    <table class="table">
+      <tr class="table__header-row">
         <th v-for="(text , index) in headers"
             v-bind:key="index">
-          {{text}}
+          <p class="table__header-item">{{text}}</p>
         </th>
       </tr>
 
-      <tr v-for="(row, index) in tableArr" v-bind:key="index">
-        <td v-for="(item, index) in row" v-bind:key="index">
+      <tr class="table__row" v-for="(row, index) in tableArr" v-bind:key="index">
+        <td class="table__item" v-for="(item, index) in row" v-bind:key="index">
           {{item}}
         </td>
       </tr>
 
     </table>
-
 
 </template>
 
@@ -39,16 +38,33 @@ export default class CreditTable extends Vue {
 
 <style scoped lang="scss">
 
- table {
-   width: 100%;
- }
+th:nth-child(1) > p {
+    max-width: 280px;
+    font-family: Inter;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 22px;
 
- tr {
-   width: 100%;
- }
+    color: #000000;
+    text-decoration: none;
+  }
 
- td {
-   text-align: center;
- }
+  th:nth-child(2) > p {
+    max-width: 103px;
+    margin-left: 0px;
+    margin-right: auto;
+  }
+
+
+  th:nth-child(1), td:nth-child(1) {
+    text-align: left;
+  }
+
+  th:nth-child(2),td:nth-child(2) {
+    text-align: left;
+    border-right: solid 100px transparent;
+  }
+
 
 </style>

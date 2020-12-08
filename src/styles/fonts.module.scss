@@ -1,0 +1,37 @@
+@font-face {
+    font-family: "Akkurat Pro";
+    src: url("//db.onlinewebfonts.com/t/cbbfee9126dc0abc730b9875dc28832f.eot");
+    src: url("//db.onlinewebfonts.com/t/cbbfee9126dc0abc730b9875dc28832f.eot?#iefix") format("embedded-opentype"),
+        url("//db.onlinewebfonts.com/t/cbbfee9126dc0abc730b9875dc28832f.woff2") format("woff2"),
+        url("//db.onlinewebfonts.com/t/cbbfee9126dc0abc730b9875dc28832f.woff") format("woff"),
+        url("//db.onlinewebfonts.com/t/cbbfee9126dc0abc730b9875dc28832f.ttf") format("truetype"),
+        url("//db.onlinewebfonts.com/t/cbbfee9126dc0abc730b9875dc28832f.svg#Akkurat Pro") format("svg");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Transcript Pro';
+    src: url('./fonts/TranscriptPro-Medium.woff2') format('woff2'),
+        url('./fonts/TranscriptPro-Medium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Transcript Pro';
+    src: url('./fonts/TranscriptPro-Regular.woff2') format('woff2'),
+        url('./fonts/TranscriptPro-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Transcript Pro';
+    src: url('./fonts/TranscriptPro-Light.woff2') format('woff2'),
+        url('./fonts/TranscriptPro-Light.woff') format('woff');
+    font-weight: 200;
+    font-style: normal;
+}

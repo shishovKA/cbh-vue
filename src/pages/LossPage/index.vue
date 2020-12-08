@@ -4,12 +4,10 @@
     <div class="page__container">
       <Sidebar />
       <div class="page">
-        <h1>
-          Loss Model
-          <span class="notbold">{{
-            this.$store.getters.curPortfolioJSON.name
-          }}</span>
-        </h1>
+
+        <div class="title__container">
+          <h1 class="title">Loss Model <span class="title title_notbold">{{this.$store.getters.curPortfolioJSON.name}}</span></h1>
+        </div>
 
         <section class="btn__main-container">
           <div class="btn__container">
@@ -69,6 +67,8 @@ export default class LossPage extends Vue {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
+
+
 .page__container {
   display: flex;
   justify-content: stretch;
@@ -76,13 +76,15 @@ export default class LossPage extends Vue {
 
 .page {
   background-color: #ffffff;
-  width: 100%;
   min-height: calc(100vh - 100px - 52px);
+  color: black;
+  width: 100%;
   display: flex;
   flex-direction: column;
+  
 }
 
-.page > * {
+.page > section {
   text-align: center;
   margin: 0;
   margin-bottom: 20px;

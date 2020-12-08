@@ -1,30 +1,21 @@
 <template>
  
-    <table>
-      <tr>
+    <table class="table">
+      <tr class="table__header-row">
         <th v-for="text in headers">
-          {{text}}
+          <p class="table__header-item">{{text}}</p>
         </th>
       </tr>
 
-      <tr v-for="row in tableArr">
-        <td v-for="item in row">
+      <tr class="table__row" v-for="row in tableArr">
+        <td class="table__item" v-for="item in row">
           {{item}}
         </td>
       </tr>
 
     </table>
 
-    <!-- 
-    <HeaderMenuItem
-      v-for="(menuItem, index) in this.$store.state.Header.data"
-      v-bind:title="menuItem.title"
-      v-bind:selected="menuItem.selected"
-      v-bind:index="index"
-      v-bind:key="index"
-    >
-    </HeaderMenuItem>
-  -->
+
 
 </template>
 
@@ -43,16 +34,58 @@ export default class Table extends Vue {
 
 <style scoped lang="scss">
 
- table {
-   width: 100%;
- }
+  th {
+    margin: 0;
+  }
 
- tr {
-   width: 100%;
- }
+  p {
+   margin: 0; 
+  }
+  
+  th:nth-child(1) > p {
+    max-width: 74px;
+  }
 
- td {
-   text-align: center;
- }
+  th:nth-child(2) > p {
+    max-width: 71px;
+    margin-left: auto;
+    margin-right: 0px;
+  }
+
+  th:nth-child(3) > p {
+    max-width: 136px;
+  }
+
+  th:nth-child(4) > p {
+    max-width: 90px;
+  }
+
+  th:nth-child(5) > p {
+    max-width: 41px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  th:nth-child(1), td:nth-child(1) {
+    text-align: left;
+  }
+
+  th:nth-child(2),td:nth-child(2) {
+    text-align: right;
+    border-right: solid 100px transparent;
+  }
+
+  th:nth-child(3),td:nth-child(3) {
+    text-align: left;
+  }
+
+  th:nth-child(4),td:nth-child(4) {
+    text-align: left;
+  }
+
+  th:nth-child(5),td:nth-child(5) {
+    text-align: center;
+  }
+
 
 </style>

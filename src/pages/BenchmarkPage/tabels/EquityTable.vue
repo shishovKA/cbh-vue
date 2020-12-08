@@ -1,25 +1,31 @@
 <template>
-  <div class='section_equity'>
-    <table>
-      <tr>
+  <div class="section_equity">
+    <table class="table">
+      <tr class="table__header-row">
         <th v-for="(text, index) in headers" v-bind:key="index">
-          {{ text }}
+          <p class="table__header-item">{{ text }}</p>
         </th>
       </tr>
 
-      <tr v-for="(row, index) in tableArr" v-bind:key="index">
-        <td v-for="(item, index) in row" v-bind:key="index">
+      <tr
+        class="table__row"
+        v-for="(row, index) in tableArr"
+        v-bind:key="index"
+      >
+        <td class="table__item" v-for="(item, index) in row" v-bind:key="index">
           {{ item }}
         </td>
       </tr>
     </table>
 
     <div class="total">
-      <h2>Total Change in portfolio value</h2>
-      <p style="background-color: red">
+      <h2 class="total__title">Total Change in portfolio value</h2>
+      <p class="valuebox__value valuebox__value_red">
         {{ this.$store.getters["RiskPageModule/discount"] }}%
       </p>
-      <strong>{{ this.$store.getters["RiskPageModule/fairValue"] }}</strong>
+      <strong class="valuebox__value">{{
+        this.$store.getters["RiskPageModule/fairValue"]
+      }}</strong>
     </div>
   </div>
 </template>
@@ -53,21 +59,73 @@ export default class EquityTable extends Vue {
   justify-content: space-between;
 }
 
-table {
-  width: 100%;
+.total {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin: 20px 0px;
+  background-color: #f6f6f6;
+  height: 72px;
+  padding-right: 82px;
 }
 
-tr {
-  width: 100%;
+.total > * {
+  margin-top: 0px;
 }
 
-td {
+.total__title {
+  margin: 0;
+  margin-right: 24px;
+
+  font-family: Inter;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 22px;
+  /* identical to box height */
+
+  text-align: right;
+
+  color: #000000;
+}
+
+th:nth-child(1) > p {
+  max-width: 255px;
+  font-family: Inter;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 22px;
+
+  color: #000000;
+  text-decoration: none;
+}
+
+th:nth-child(2) > p {
+  max-width: 86px;
+  margin-left: 0px;
+  margin-right: auto;
+}
+
+th:nth-child(3) > p {
+  max-width: 41px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+th:nth-child(1),
+td:nth-child(1) {
+  text-align: left;
+}
+
+th:nth-child(2),
+td:nth-child(2) {
+  text-align: left;
+  border-right: solid 100px transparent;
+}
+
+th:nth-child(3),
+td:nth-child(3) {
   text-align: center;
 }
-
-.total {
-  margin: 50px 0px;
-  background-color: #F6F6F6;
-}
-
 </style>

@@ -1,7 +1,7 @@
 <template>
   <div @click="selectPortfolio" class="item" v-bind:class="{ selected: selected }">
       <p class="item__text">Portfolio {{index+1}} </p>
-      <strong> {{name}} </strong>
+      <p class="item__text item__text_name"> {{name}} </p>
       <p class="item__text">{{score}}</p>
   </div>
 </template>
@@ -27,6 +27,7 @@ export default class SidebarItem extends Vue {
 <style scoped lang="scss">
 
 .item {
+  box-sizing: border-box;
   padding: 0px 10px;
   cursor: pointer;
   height: 105px;
@@ -36,12 +37,24 @@ export default class SidebarItem extends Vue {
   padding-top: 23px;
 }
 
-.item > * {
-    margin: 0;
-}
-
 .selected {
   background-color: rgba($color: #343E47, $alpha: 0.1);
 }
+
+.item__text {
+  margin: 0;
+  font-family: Inter;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 19px;
+  letter-spacing: 0em;
+}
+
+.item__text_name {
+  font-weight: 700;
+}
+
+
 
 </style>

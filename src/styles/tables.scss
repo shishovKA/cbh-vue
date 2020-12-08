@@ -1,0 +1,50 @@
+.table__container {
+    box-sizing: border-box;
+    width: 100%;
+    padding-left: 27px;
+    padding-right: 64px;
+}
+
+.table {
+    border-collapse: collapse;
+    box-sizing: border-box;
+    width: 100%;
+}
+
+.table__header-row {
+    border-bottom: 20px solid #FFFFFF;
+}
+
+.table__header-item {
+    font-family: Inter;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 15px;
+    letter-spacing: 0.02em;
+
+    text-transform: uppercase;
+    color: #16223F;
+    opacity: 0.7;
+    margin: 0;
+}
+
+.table__item {
+    font-family: Inter;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 21px;
+    letter-spacing: 0em;
+}
+
+.table__row {
+    height: 39px;
+}
+
+.table__row:nth-child(odd) {
+    background-color: #F3F3F3;
+}
+
+
+
