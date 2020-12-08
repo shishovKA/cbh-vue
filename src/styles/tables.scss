@@ -12,6 +12,7 @@
 }
 
 .table__header-row {
+    box-sizing: border-box;
     border-bottom: 20px solid #FFFFFF;
 }
 
@@ -38,7 +39,20 @@
     letter-spacing: 0em;
 }
 
+.table__item_index {
+    font-family: Inter;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 17px;
+    line-height: 21px;
+    /* identical to box height */
+    color: #000000;
+    opacity: 0.3;
+    padding-left: 24px;
+}
+
 .table__row {
+    box-sizing: border-box;
     height: 39px;
 }
 

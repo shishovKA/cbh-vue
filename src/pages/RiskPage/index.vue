@@ -20,6 +20,10 @@
             <h2 class="valuebox__title">Overall Portfolio Risk Score</h2>
             <p class="valuebox__value">
               {{ this.$store.getters["RiskPageModule/riskScore"] }}
+              <StarBar class="valuebox__star"
+                v-bind:value='this.$store.getters["RiskPageModule/riskScore"]'
+                v-bind:mode="'full'"
+              />
             </p>
           </div>
 
@@ -53,13 +57,15 @@
 import { Component, Prop, Vue } from "vue-property-decorator";
 import Sidebar from "../../components/Sidebar.vue";
 import HeaderMenu from "../../components/HeaderMenu.vue";
-import Table from "../../components/Table.vue";
+import Table from "./Table.vue";
+import StarBar from '../../components/StarBar.vue'
 
 @Component({
   components: {
     Sidebar,
     HeaderMenu,
     Table,
+    StarBar,
   },
 })
 export default class RiskPage extends Vue {}
@@ -67,6 +73,21 @@ export default class RiskPage extends Vue {}
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss">
+
+.valuebox__star {
+  margin-left: 8px;
+  font-family: Inter;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 33.8356px;
+  line-height: 41px;
+
+  display: flex;
+  align-items: center;
+  height: 57px;
+}
+
+
 .page__container {
   display: flex;
   justify-content: stretch;

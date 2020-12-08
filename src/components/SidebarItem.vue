@@ -2,14 +2,25 @@
   <div @click="selectPortfolio" class="item" v-bind:class="{ selected: selected }">
       <p class="item__text">Portfolio {{index+1}} </p>
       <p class="item__text item__text_name"> {{name}} </p>
-      <p class="item__text">{{score}}</p>
+      <StarBar class="item__star"
+        v-bind:value="score"
+        v-bind:mode="'full'"
+      />
+      
   </div>
 </template>
 
 <script lang="ts">
 import { Component, Prop, Vue } from 'vue-property-decorator';
+import StarBar from './StarBar.vue'
 
-@Component
+@Component({
+  components: {
+    StarBar,
+  },
+})
+
+
 export default class SidebarItem extends Vue {
   @Prop()  private name!: string;
   @Prop()  private score!: number;
@@ -53,6 +64,13 @@ export default class SidebarItem extends Vue {
 
 .item__text_name {
   font-weight: 700;
+}
+
+.item__star {
+  margin-top: 7px;
+  font-size: 17px;
+  font-weight: 700;
+  line-height: 21px;
 }
 
 
