@@ -71,6 +71,7 @@ export default class App extends Vue {
 @import url('./styles/tables.scss');
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
 
+
 $header-height: 100px;
 
 html,
@@ -84,6 +85,7 @@ body {
 }
 
 .header {
+  position: relative;
   box-sizing: border-box;
   display: flex;
   align-items: center;
@@ -91,6 +93,8 @@ body {
   background-color: #ffffff;
   padding: 0px 18px;
   justify-content: space-between;
+
+  z-index: 3;
 }
 
 .logo__container {

@@ -3,18 +3,30 @@
     <h1 class="title">Welcome to Fund Management Dashboard</h1>
     <p class="text">Identify and Prioritize Financial Risk from Cyber in your Portfolio</p>
     <div class="button" @click="changePage">Open Dashboard</div>
+
+    <div class="welcome__background-container" id='splash-cover'>
+      <canvas class="welcome__canvas"></canvas>
+    </div>
+
   </div>
 </template>
 
 <script lang="ts">
 import { Component, Prop, Vue } from 'vue-property-decorator';
+import {create} from './graphics.js'
 
 @Component
 export default class WelcomePage extends Vue {
 
+  mounted() {
+    create();
+  }
+
+
   private changePage() {
     this.$store.commit('switchPage', 'RiskPage');
   }
+
 }
 </script>
 
@@ -23,10 +35,14 @@ export default class WelcomePage extends Vue {
 
 .page {
   box-sizing: border-box;
-  background-image: url('../../assets/welcome-page-back.png');
+  
   height: calc(100vh - 100px);
   padding-top: 117px;
   padding-left: 208px;
+}
+
+.welocome-background {
+  background-image: url('../../assets/welcome-page-back.png');
 }
 
 .title {
@@ -39,6 +55,8 @@ export default class WelcomePage extends Vue {
   line-height: 86px;
   letter-spacing: -0.02em;
   color: #FFFFFF;
+
+  z-index: 2;
 }
 
 .text {
@@ -54,6 +72,8 @@ export default class WelcomePage extends Vue {
   line-height: 53px;
   letter-spacing: -0.01em;
   color: #FFFFFF;
+
+  z-index: 2;
 }
 
 .button {
@@ -76,5 +96,24 @@ export default class WelcomePage extends Vue {
   display: flex;
   align-items: center;
   justify-content: center;
+
+  z-index: 2;
 }
+
+
+.welcome__background-container {
+  background-color: pink;
+  width: 100%; 
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+.welcome__canvas {
+  width: 100%; 
+  height: 100%;
+}
+
 </style>
