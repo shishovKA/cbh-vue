@@ -22,8 +22,19 @@
           />
           </div>
         </td>
-        <td class="table__item">{{ row[3] }}</td>
-        <td class="table__item">{{ row[4] }}</td>
+        <td class="table__item">
+          <p class="colored-value-box"
+            v-bind:class="{ 'colored-value-box_red': row[3]<0, 'colored-value-box_green': row[3]>0 }"
+          >{{ row[3] }}%</p>
+        </td>
+        <td class="table__item">
+          <div class="double-container">
+            <div class="double-container__item double-container__item_left">
+              ●<div class="line-chart"></div>
+            </div>
+            <p class="table__item double-container__item double-container__item_right">{{ row[4] }}</p>
+          </div>
+        </td>
       </tr>
 
     </table>
@@ -53,6 +64,37 @@ export default class Table extends Vue {
 
 <style scoped lang="scss">
 
+  .line-chart {
+    width: 34%;
+    height: 0px;
+    border-bottom: 1px solid #E65049;
+  }
+
+  .double-container__item {
+    flex-basis: 50%;
+  }
+
+  .double-container__item_left {
+    text-align: right;
+
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+    color: #E65049;
+  }
+
+  .double-container__item_right {
+    text-align: left;
+    padding-left: 10px;
+  }
+
+  .double-container {
+    display: flex;
+    justify-content: center;
+    
+  }
+
   .item__star_table {
     font-family: Inter;
     font-style: normal;
@@ -68,14 +110,6 @@ export default class Table extends Vue {
     height: 100%;
     display: flex;
     align-items: center;
-  }
-
-  th {
-    margin: 0;
-  }
-
-  p {
-   margin: 0; 
   }
 
   th:nth-child(1), td:nth-child(1) {
@@ -109,6 +143,7 @@ export default class Table extends Vue {
 
   th:nth-child(2), td:nth-child(2) {
     text-align: left;
+    width: calc(195px + 95px);
   }
 
   th:nth-child(3),td:nth-child(3) {
@@ -126,6 +161,7 @@ export default class Table extends Vue {
 
   th:nth-child(6),td:nth-child(6) {
     text-align: center;
+    width: calc(131px + 131px);
   }
 
 

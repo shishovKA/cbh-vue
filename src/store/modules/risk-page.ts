@@ -33,14 +33,14 @@ get fairValue() {
 
 get tableArr() {
     const portfolioID = store.state.Root.curPorfolioId;
-    const headers = ['companyName','weight','cyberGovScore','discount-to-fair-value (%)', 'fair-value (mn)'] 
+    const headers = ['companyName','weight','cyberGovScore','discountToFairValue', 'fair-value (mn)'] 
     //@ts-ignore
     const table = store.state.Root.csvDB.filter(company => company['portID'] === portfolioID);
     //@ts-ignore
     const resultArr = table.map((company) => {
         const item: any = [];
         headers.forEach((header) => {
-            if (header in company) { item.push(company[header]) } else { item.push('❔') }
+            if (header in company) { item.push(company[header]) } else { item.push('null') }
         });
         return item;
     });

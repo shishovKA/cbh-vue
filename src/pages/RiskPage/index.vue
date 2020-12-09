@@ -44,7 +44,7 @@
             v-bind:tableArr="this.$store.getters['RiskPageModule/tableArr']"
           >
           </Table>
-
+          <div class="col-divider"></div>
         </div>
 
       </div>
@@ -73,6 +73,14 @@ export default class RiskPage extends Vue {}
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss">
+
+.col-divider {
+  position: absolute;
+  height: calc(100% - 30px);
+  border-right: 1px dashed #202A33;
+  top: 38px;
+  right: calc(131px + 67px);
+}
 
 .valuebox__star {
   margin-left: 8px;

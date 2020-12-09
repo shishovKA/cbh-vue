@@ -3,6 +3,7 @@
     width: 100%;
     padding-left: 27px;
     padding-right: 64px;
+    position: relative;
 }
 
 .table {
@@ -37,6 +38,7 @@
     font-weight: 500;
     line-height: 21px;
     letter-spacing: 0em;
+    margin: 0; 
 }
 
 .table__item_index {
@@ -58,6 +60,35 @@
 
 .table__row:nth-child(odd) {
     background-color: #F3F3F3;
+}
+
+.colored-value-box {
+    width: min-content;
+    margin: 0;
+    padding: 0 7px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 25px;
+    border-radius: 4px;
+
+    font-family: Inter;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 17px;
+    line-height: 21px;
+
+    text-align: center;
+}
+
+.colored-value-box_red {
+    background-color: rgba(230, 80, 73, 0.1);
+    color: #FF1010;
+}
+
+.colored-value-box_green {
+    background-color: rgba(60, 153, 72, 0.1);
+    color: #047500;
 }
 
 
