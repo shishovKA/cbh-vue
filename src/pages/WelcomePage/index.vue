@@ -44,7 +44,10 @@ export default class WelcomePage extends Vue {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
 
-
+.header__welcome {
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+}
 
 .content__container {
   position: relative;

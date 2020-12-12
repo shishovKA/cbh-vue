@@ -1,5 +1,18 @@
 <template>
   <div>
+
+    <div class="header header__welcome">
+      <div class="logo__container">
+        <p class="logo">cbh</p>
+        <h1 class="logo__title">Fund Management Dashboard</h1>
+      </div>
+      <a class="help__container" href="https://cyberhedge.com/" target="_blank">
+        <img class="help__by" src="../../assets/DataBy.svg" />
+        <img class="help__button" src="../../assets/Help.svg" />
+      </a>
+    </div>
+
+
     <HeaderMenu />
     <div class="page__container">
       <Sidebar />

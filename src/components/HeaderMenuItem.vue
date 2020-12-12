@@ -20,18 +20,24 @@ export default class HeaderMenuItem extends Vue {
 <style scoped lang="css">
 
 .navbtn {
-  padding: 0px 30px;
+  padding: 0px 3rem;
   color: white;
   cursor: pointer;
   height: 100%;
   line-height: 52px;
 
-  font-family: Akkurat Pro;
-  font-size: 20px;
+  font-family: "Akkurat Pro";
+  font-size: 2rem;
   font-style: normal;
   font-weight: 400;
   letter-spacing: -0.03em;
   opacity: 0.3;
+
+  white-space: nowrap; /* Запрещаем перенос строк */
+  overflow: hidden; /* Обрезаем все, что не помещается в область */
+  text-overflow: ellipsis; /* Добавляем многоточие */
+
+  min-width: 0;
 }
 
 .selected {
