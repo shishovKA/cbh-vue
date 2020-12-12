@@ -24,10 +24,14 @@ export default class ResearchPage extends Vue {}
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
+
+/*
+
 .page__container {
   display: flex;
   justify-content: stretch;
 }
+
 
 .page {
   background-color: #ffffff;
@@ -45,6 +49,7 @@ export default class ResearchPage extends Vue {}
   margin: 0;
   margin-bottom: 20px;
 }
+*/
 
 .button {
   color: black;

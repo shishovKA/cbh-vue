@@ -71,10 +71,12 @@ export default class BenchmarkPage extends Vue {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
 
+/*
 .page__container {
   display: flex;
   justify-content: stretch;
 }
+
 
 .page {
   background-color: #ffffff;
@@ -83,8 +85,8 @@ export default class BenchmarkPage extends Vue {
   width: 100%;
   display: flex;
   flex-direction: column;
-  
 }
+*/
 
 td {
   text-align: center;

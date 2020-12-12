@@ -68,7 +68,7 @@ export default class LossPage extends Vue {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
 
-
+/*
 .page__container {
   display: flex;
   justify-content: stretch;
@@ -89,6 +89,7 @@ export default class LossPage extends Vue {
   margin: 0;
   margin-bottom: 20px;
 }
+*/
 
 .btn__main-container {
   width: 100%;
