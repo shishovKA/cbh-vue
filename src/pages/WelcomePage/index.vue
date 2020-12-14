@@ -27,6 +27,7 @@
 
 <script lang="ts">
 import { Component, Prop, Vue } from "vue-property-decorator";
+// @ts-ignore
 import { create } from "./graphics.js";
 
 @Component
